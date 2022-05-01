@@ -7,9 +7,9 @@ import model.User;
  */
 public abstract class BaseRegistration implements Registration {
 
-    protected final Storage<User> userStorage;
+    protected final Storage<User> storage;
 
-    protected BaseRegistration(Storage<User> userStorage) {
-        this.userStorage = userStorage;
+    protected BaseRegistration(Storage<User> storage) {
+        this.storage = storage;
     }
 }

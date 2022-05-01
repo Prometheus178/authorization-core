@@ -1,4 +1,4 @@
-package service.implementations;
+package service.implementation.simple;
 
 import model.Login;
 import model.User;
@@ -11,18 +11,18 @@ import service.base.Storage;
 public class SimpleRegistration extends BaseRegistration {
 
 
-    public SimpleRegistration(Storage<User> userStorage) {
-        super(userStorage);
+    public SimpleRegistration(Storage<User> storage) {
+        super(storage);
     }
 
     @Override
     public boolean registration(User user) {
-        return userStorage.save(user);
+        return storage.save(user);
     }
 
     @Override
     public boolean isRegistered(Login login) {
-        User user = userStorage.get(login);
+        User user = storage.get(login);
         return user != null;
     }
 }
