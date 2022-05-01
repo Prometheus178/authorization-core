@@ -18,6 +18,9 @@ public class SimpleAuthorization extends BaseAuthorization {
     public boolean verify(User user) {
         if (user == null) return false;
         Login login = user.getLogin();
+        if ((login.getName() == null) && (login.getEmail() == null) && (login.getPhone() == null)){
+            return false;
+        }
         User existedUser = storage.get(login);
         if (existedUser != null){
             return existedUser.equals(user);

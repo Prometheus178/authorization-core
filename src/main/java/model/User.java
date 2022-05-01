@@ -10,6 +10,15 @@ public class User extends BaseObject {
     private Login login;
     private String password;
 
+    public User(Login login) {
+        this.login = login;
+    }
+
+    public User(Login login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
     public Login getLogin() {
         return login;
     }
